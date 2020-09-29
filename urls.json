@@ -1,3 +1,339 @@
 {
-    "modifications": []
+    "modifications": [
+        {
+            "type": "insertAfterNode",
+            "path": "/portal/root",
+            "value": {
+                "index": {
+                    "url": "$",
+                    "func": "index"
+                }
+            }
+        },
+        {
+            "type": "insertAfterNode",
+            "path": "/portal/index",
+            "value": {
+                "authentication": {
+                    "url": "login/$",
+                    "func": "auth_login"
+                }
+            }
+        },
+        {
+            "type": "insertAfterNode",
+            "path": "/portal/authentication",
+            "value": {
+                "signup": {
+                    "url": "signup/$",
+                    "func": "signup_request"
+                }
+            }
+        },
+        {
+            "type": "insertAfterNode",
+            "path": "/portal/signup",
+            "value": {
+                "account": {
+                    "url": "account/$",
+                    "func": "account"
+                }
+            }
+        },
+        {
+            "type": "insertAfterNode",
+            "path": "/portal/account",
+            "value": {
+                "changepassword": {
+                    "url": "changepassword/$",
+                    "func": "account_request"
+                }
+            }
+        },
+        {
+            "type": "insertAfterNode",
+            "path": "/portal/changepassword",
+            "value": {
+                "logout": {
+                    "url": "logout$",
+                    "func": "logout",
+                    "params": {
+                        "next_page": "/"
+                    }
+                }
+            }
+        },
+        {
+            "type": "insertAfterNode",
+            "path": "/portal/logout",
+            "value": {
+                "system": {
+                    "url": "system$",
+                    "func": "system"
+                }
+            }
+        },
+        {
+            "type": "insertAfterNode",
+            "path": "/portal/system",
+            "value": {
+                "deleteUser": {
+                    "url": "deleteUser/(?P<user>\\w+)$",
+                    "func": "deleteUser"
+                }
+            }
+        },
+        {
+            "type": "insertAfterNode",
+            "path": "/portal/deleteUser",
+            "value": {
+                "deleteUserGroup": {
+                    "url": "deleteUserGroup/(?P<user>\\w+)/(?P<groupname>\\w+)$",
+                    "func": "deleteUserGroup"
+                }
+            }
+        },
+        {
+            "type": "insertAfterNode",
+            "path": "/portal/deleteUserGroup",
+            "value": {
+                "addGroup": {
+                    "url": "addGroup/(?P<username>\\w+)$",
+                    "func": "addGroup"
+                }
+            }
+        },
+        {
+            "type": "insertAfterNode",
+            "path": "/portal/addGroup",
+            "value": {
+                "newgroup": {
+                    "url": "newgroup/$",
+                    "func": "newgroup_request"
+                }
+            }
+        },
+        {
+            "type": "insertAfterNode",
+            "path": "/portal/newgroup",
+            "value": {
+                "403": {
+                    "url": "403$",
+                    "func": "forbiddenError"
+                }
+            }
+        },
+        {
+            "type": "insertAfterNode",
+            "path": "/portal",
+            "value": {
+                "sync": {}
+            }
+        },
+        {
+            "type": "insertAfterNode",
+            "path": "/sync",
+            "value": {
+                "api": {
+                    "controller": true
+                }
+            }
+        },
+        {
+            "type": "insertAfterNode",
+            "path": "/api",
+            "value": {
+                "tpv": {}
+            }
+        },
+        {
+            "type": "insertAfterNode",
+            "path": "/tpv",
+            "value": {
+                "facturacion": {}
+            }
+        },
+        {
+            "type": "insertAfterNode",
+            "path": "/facturacion",
+            "value": {
+                "almacen": {}
+            }
+        },
+        {
+            "type": "insertAfterNode",
+            "path": "/almacen",
+            "value": {
+                "principal": {}
+            }
+        },
+        {
+            "type": "insertAfterNode",
+            "path": "/models/root",
+            "value": {
+                "flfact_tpv": {
+                    "tpv_agentes": null,
+                    "tpv_anularvales": null,
+                    "tpv_arqueos": null,
+                    "tpv_cantidadpago": null,
+                    "tpv_causasmovimiento": null,
+                    "tpv_claveacceso": null,
+                    "tpv_comandas": null,
+                    "tpv_consultastocks": null,
+                    "tpv_datosgenerales": null,
+                    "tpv_finventa": null,
+                    "tpv_lineascomanda": null,
+                    "tpv_lineasvale": null,
+                    "tpv_movimientos": null,
+                    "tpv_movivale": null,
+                    "tpv_pagoscomanda": null,
+                    "tpv_puntosventa": null,
+                    "tpv_secuenciascomanda": null,
+                    "tpv_tarjetaspago": null,
+                    "tpv_tiendas": null,
+                    "tpv_vales": null,
+                    "tpv_fechasincrotienda": null,
+                    "mg_datosenviocomanda": null,
+                    "idl_ecommerce": null,
+                    "tpv_tarjetaspuntos": null
+                }
+            }
+        },
+        {
+            "type": "insertAfterNode",
+            "path": "/models/flfact_tpv",
+            "value": {
+                "flfacturac": {
+                    "lineasfacturascli": null,
+                    "lineasalbaranescli": null,
+                    "albaranescli": null,
+                    "facturasprov": null,
+                    "lineaspedidoscli": null,
+                    "lineaspedidosprov": null,
+                    "fechaejercicio": null,
+                    "albaranesprov": null,
+                    "lineasfacturasprov": null,
+                    "agruparpedidosprov": null,
+                    "lineasivafactprov": null,
+                    "presupuestoscli": null,
+                    "lineasivafactcli": null,
+                    "agruparalbaranescli": null,
+                    "agruparpedidoscli": null,
+                    "facturascli": null,
+                    "lineaspresupuestoscli": null,
+                    "facturac_general": null,
+                    "huecos": null,
+                    "facturas_imp": null,
+                    "datosadicionales": null,
+                    "trazadoc": null,
+                    "plantillastextofac": null,
+                    "lineasalbaranesprov": null,
+                    "pedidosprov": null,
+                    "pedidoscli": null,
+                    "agruparalbaranesprov": null
+                }
+            }
+        },
+        {
+            "type": "insertAfterNode",
+            "path": "/models/flfacturac",
+            "value": {
+                "flfactalma": {
+                    "familias": null,
+                    "lecturasinvetariocsv": null,
+                    "transstock": null,
+                    "stocks": null,
+                    "articuloscli": null,
+                    "tarifas": null,
+                    "articulostarifas": null,
+                    "marcas": null,
+                    "articulos": null,
+                    "inventarios": null,
+                    "factalma_general": null,
+                    "lineastransstock": null,
+                    "articulosagen": null,
+                    "almacenes": null,
+                    "articulosprov": null,
+                    "lineasregstocks": null,
+                    "movistock": null
+                }
+            }
+        },
+        {
+            "type": "insertAfterNode",
+            "path": "/models/flfactalma",
+            "value": {
+                "flcontppal": {
+                    "co_cuentas": null,
+                    "co_subcuentas": null,
+                    "co_subcuentascli": null
+                }
+            }
+        },
+        {
+            "type": "insertAfterNode",
+            "path": "/models/flcontppal",
+            "value": {
+                "flfactppal": {
+                    "agentes": null,
+                    "bancos": null,
+                    "clientes": null,
+                    "contactosclientes": null,
+                    "contactosproveedores": null,
+                    "crm_contactos": null,
+                    "cuentasbanco": null,
+                    "cuentasbcocli": null,
+                    "cuentasbco_imp": null,
+                    "cuentasbcopro": null,
+                    "departamentos": null,
+                    "descuentosclientes": null,
+                    "descuentos_imp": null,
+                    "descuentos": null,
+                    "descuentosproveedores": null,
+                    "dirclientes": null,
+                    "dirproveedores": null,
+                    "divisas_imp": null,
+                    "divisas": null,
+                    "ejercicios_imp": null,
+                    "ejercicios": null,
+                    "empresa": null,
+                    "factppal_general": null,
+                    "formaspago_imp": null,
+                    "formaspago": null,
+                    "gruposclientes": null,
+                    "impuestos_imp": null,
+                    "impuestos": null,
+                    "intervalos": null,
+                    "intervalosrappel": null,
+                    "paises_imp": null,
+                    "paises": null,
+                    "plazos": null,
+                    "proveedores": null,
+                    "provincias": null,
+                    "rh_empleados": null,
+                    "secuenciasejercicios": null,
+                    "secuencias": null,
+                    "series_imp": null,
+                    "series": null,
+                    "sucursales": null,
+                    "textosinformes": null,
+                    "tiposrappel": null,
+                    "usuarios": null,
+                    "zonasgeo": null,
+                    "eg_logpedidosweb": null,
+                    "eg_logtarjetasweb": null
+                }
+            }
+        },
+        {
+            "type": "insertAfterNode",
+            "path": "/models/flfactppal",
+            "value": {
+                "fllogin": {
+                    "auth_user": null,
+                    "auth_group": null
+                }
+            }
+        }
+    ]
 }
